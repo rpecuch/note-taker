@@ -50,6 +50,7 @@ const deleteNote = (id) =>
     },
   });
 
+//readonly attribute specifies that an input field is read only when set to true
 const renderActiveNote = () => {
   hide(saveNoteBtn);
 
