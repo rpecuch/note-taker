@@ -6,7 +6,7 @@ const id = generateUniqueId({
     length: 10,
     includeSymbols: ['@', '#', '%']
 })
-const noteData = require('./db/db.json');
+// const noteData = require('./db/db.json');
 //may need to adjust this
 const PORT = 3001;
 const app = express();
@@ -23,7 +23,9 @@ app.get('/api/notes', (req,res) => {
     //read db.json file
     //return all saved notes as json
     // res.json(`${req.method} request for ${req.path} received`);
-    res.json(noteData);
+    console.log('get request received');//yes
+    //logs correct data. so the issue is the correct data is not being sent back to client
+    fs.readFile('./db/db.json', 'utf8', (error, data) => error ? console.error(error) : res.json(data));
 });
 
 app.post('/api/notes', (req,res) => {
