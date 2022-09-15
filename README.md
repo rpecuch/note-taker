@@ -18,6 +18,10 @@ Add a bit more
 
   Describe how to use.
 
+  ## Credits
+
+This project was based on the starter code from the miniature-eureka repository belonging to the GitHub user @coding-boot-camp.
+
   ## License
 
   This application is covered under the MIT License.
