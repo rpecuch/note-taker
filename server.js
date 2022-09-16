@@ -92,6 +92,11 @@ app.delete('/api/notes/:id', (req, res) => {
             );
         }
     });
+    const response = {
+        status: 'success',
+        id: requestedId,
+    }
+    res.json(response);
 })
 
 //displays homepage if user attempts to visit route that does not exist

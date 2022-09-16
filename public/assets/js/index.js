@@ -50,7 +50,7 @@ const saveNote = (note) =>
     },
     body: JSON.stringify(note),
   })
-  .then((response) => response.json())
+  .then((response) => response.json());
 
 //deletes a note
 const deleteNote = (id) =>
@@ -59,6 +59,10 @@ const deleteNote = (id) =>
     headers: {
       'Content-Type': 'application/json',
     },
+  })
+  .then(() => {
+    getAndRenderNotes();
+    renderActiveNote();
   });
 
 //readonly attribute specifies that an input field is read only when set to true
@@ -101,11 +105,8 @@ const handleNoteDelete = (e) => {
   if (activeNote.id === noteId) {
     activeNote = {};
   }
-
-  deleteNote(noteId).then(() => {
-    getAndRenderNotes();
-    renderActiveNote();
-  });
+  
+  deleteNote(noteId);
 };
 
 // Sets the activeNote and displays it
@@ -185,8 +186,9 @@ const renderNoteList = async (notes) => {
 };
 
 // Gets notes from the db and renders them to the sidebar
-const getAndRenderNotes = () => 
-getNotes().then(renderNoteList);
+const getAndRenderNotes = () => {
+  getNotes().then(renderNoteList);
+}
 
 if (window.location.pathname === '/notes') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
