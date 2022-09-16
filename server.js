@@ -3,8 +3,7 @@ const path = require('path');
 const generateUniqueId = require('generate-unique-id');
 const fs = require('fs');
 const id = generateUniqueId({
-    length: 10,
-    includeSymbols: ['@', '#', '%']
+    length: 10
 })
 // const noteData = require('./db/db.json');
 //may need to adjust this
@@ -64,9 +63,31 @@ app.post('/api/notes', (req,res) => {
     }
 });
 
+//letting me remove 1 but not another
 app.delete('/api/notes/:id', (req, res) => {
-    //receive query param containaing note id
+    let requestedId = req.params.id;
+    console.log(requestedId);
     //read all notes from db.json file and remoe the note with the given id
+    fs.readFile('./db/db.json', 'utf8', (err, data) => {
+        if(err) {
+            console.error(err);
+        }
+        else {
+            const parsedNotes = JSON.parse(data);
+            for(let i=0; i<parsedNotes.length; i++) {
+                const currentNote = parsedNotes[i];
+                if(currentNote.id === requestedId) {
+                    console.log(currentNote.id)
+                    parsedNotes.splice(i, 1);
+                }
+            }
+            //rewrite file with updated review
+            fs.writeFile('./db/db.json', JSON.stringify(parsedNotes, null, 4), (err) => {
+                err ? console.error(err) : console.log('Successfully deleted note!')
+            }
+            );
+        }
+    });
     //rewrite notes to db.json file
     res.json(`${req.method} request for ${req.path} received`);
 })

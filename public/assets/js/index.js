@@ -32,12 +32,9 @@ const getNotes = () => {
       'Content-Type': 'application/json',
     },
   })
-  // .then((response) => {
-  //   return response.json();
-  // })
-  // .then((data) => {
-  //   return data;
-  // })
+  .then((response) => {
+    return response.json();
+  })
   .catch((error) => {
     console.error('Error: ', error);
   });
@@ -131,8 +128,7 @@ const handleRenderSaveBtn = () => {
 // Render the list of note titles
 const renderNoteList = async (notes) => {
   console.log(notes);
-  let jsonNotes = await notes.json();
-  // let jsonNotes = notes;
+  let jsonNotes = notes;
   if (window.location.pathname === '/notes') {
     noteList.forEach((el) => (el.innerHTML = ''));
   }
