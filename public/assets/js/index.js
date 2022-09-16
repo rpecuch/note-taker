@@ -26,15 +26,21 @@ const hide = (elem) => {
 let activeNote = {};
 
 const getNotes = () => {
-  console.log('fetching');//yes
-  fetch('/api/notes', {
+  return fetch('/api/notes', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
   })
-  .then((response) => console.log(response));
-  //not picking up correct data even though logged correctly on server side
+  // .then((response) => {
+  //   return response.json();
+  // })
+  // .then((data) => {
+  //   return data;
+  // })
+  .catch((error) => {
+    console.error('Error: ', error);
+  });
 };
 
 const saveNote = (note) =>
@@ -123,7 +129,9 @@ const handleRenderSaveBtn = () => {
 
 // Render the list of note titles
 const renderNoteList = async (notes) => {
+  console.log(notes);
   let jsonNotes = await notes.json();
+  // let jsonNotes = notes;
   if (window.location.pathname === '/notes') {
     noteList.forEach((el) => (el.innerHTML = ''));
   }
@@ -177,9 +185,7 @@ const renderNoteList = async (notes) => {
 
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => 
-getNotes()
-// .then(renderNoteList);
-//the .then is the part not working
+getNotes().then(renderNoteList);
 
 if (window.location.pathname === '/notes') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
