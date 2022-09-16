@@ -4,9 +4,7 @@
 
   ## Description
 
-The purpose of this project was to implement Express concepts to create an application that connects front-end and back-end. This application allows the user to write and save notes, allowing them to keep track of tasks that need to be completed. While building this project, I became comfortable using Express to handle GET, POST, and DELETE requests. 
-
-Add a bit more
+The purpose of this project was to implement Express concepts to create an application that connects front-end and back-end. This application allows the user to write and save notes, allowing them to keep track of tasks that need to be completed. While building this project, I became comfortable using Express to handle GET, POST, and DELETE requests. I learned how to implement proper communication between the front and back ends.
 
   ## Installation
 
@@ -14,9 +12,21 @@ Add a bit more
 
   ## Usage
 
-  Describe how to access application.
+  To access this application, visit the following URL: [https://express-note-taker-rp.herokuapp.com/](https://express-note-taker-rp.herokuapp.com/). Click the "Get Started" button to start a list of notes.
 
-  Describe how to use.
+  ![homepage of application](./images/homepage.png)
+
+ Click in the text area to start adding a new note, then click the save button to save it.
+
+ ![new note](./images/save-note.png)
+
+ Once a note is created, users may either click on the note to view it, or click on the red icon next to it to delete it.
+
+ ![button to delete note](./images/delete-note.png)
+
+ To add another note, click on the plus icon.
+
+ ![displayed note with option to add new note](./images/add-note.png)
 
   ## Credits
 
