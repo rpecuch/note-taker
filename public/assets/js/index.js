@@ -25,6 +25,7 @@ const hide = (elem) => {
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
+//list notes that have already been created
 const getNotes = () => {
   return fetch('/api/notes', {
     method: 'GET',
@@ -40,6 +41,7 @@ const getNotes = () => {
   });
 };
 
+//saves new note created by user
 const saveNote = (note) =>
   fetch('/api/notes', {
     method: 'POST',
@@ -50,6 +52,7 @@ const saveNote = (note) =>
   })
   .then((response) => response.json())
 
+//deletes a note
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
     method: 'DELETE',
@@ -59,6 +62,7 @@ const deleteNote = (id) =>
   });
 
 //readonly attribute specifies that an input field is read only when set to true
+//allows active note to display and does not allow user to edit it
 const renderActiveNote = () => {
   hide(saveNoteBtn);
 
