@@ -11,6 +11,16 @@
 
 The purpose of this project was to implement Express concepts to create a full-stack application that allows the user to write and save notes. While building this project, I became comfortable using Express to handle GET, POST, and DELETE requests. I learned how to implement proper communication between the front and back end.
 
+## Table of Contents
+
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Credits](#credits)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [Questions](#questions)
+
   ## Installation
 
   N/A
