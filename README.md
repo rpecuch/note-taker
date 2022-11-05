@@ -2,9 +2,14 @@
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+  ![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+  ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+  ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+  ![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+
   ## Description
 
-The purpose of this project was to implement Express concepts to create an application that connects front-end and back-end. This application allows the user to write and save notes, allowing them to keep track of tasks that need to be completed. While building this project, I became comfortable using Express to handle GET, POST, and DELETE requests. I learned how to implement proper communication between the front and back ends.
+The purpose of this project was to implement Express concepts to create a full-stack application that allows the user to write and save notes. While building this project, I became comfortable using Express to handle GET, POST, and DELETE requests. I learned how to implement proper communication between the front and back end.
 
   ## Installation
 
