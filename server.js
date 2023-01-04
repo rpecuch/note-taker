@@ -1,12 +1,13 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-//generates a unique id
+//generates a unique id 10 chars in length
 const generateUniqueId = require('generate-unique-id');
 const id = generateUniqueId({
     length: 10
 })
 const util = require('util');
+//allow use of promises
 const readFromFile = util.promisify(fs.readFile);
 
 const PORT = process.env.PORT || 3001;
@@ -34,7 +35,9 @@ app.get('/api/notes', (req,res) => {
 //creates new note and adds it to db.json file
 app.post('/api/notes', (req,res) => {
     const { title, text} = req.body;
+    //check if required fields filled out
     if (title && text) {
+        //create object with new note data
         const newNote = {
             title,
             text,
@@ -56,11 +59,11 @@ app.post('/api/notes', (req,res) => {
                 );
             }
         });
+        //create success message
         const response = {
-            status: 'succes',
+            status: 'Note successfully created!',
             body: newNote,
         }
-        console.log(response);
         res.status(201).json(response);
     }
     else{
@@ -78,8 +81,10 @@ app.delete('/api/notes/:id', (req, res) => {
         }
         else {
             const parsedNotes = JSON.parse(data);
+            //loop through all notes to find one matching request id
             for(let i=0; i<parsedNotes.length; i++) {
                 const currentNote = parsedNotes[i];
+                //if match
                 if(currentNote.id === requestedId) {
                     //remove current note
                     parsedNotes.splice(i, 1);
@@ -92,8 +97,9 @@ app.delete('/api/notes/:id', (req, res) => {
             );
         }
     });
+    //create success message
     const response = {
-        status: 'success',
+        status: 'Note successfully deleted!',
         id: requestedId,
     }
     res.json(response);
