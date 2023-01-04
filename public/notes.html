@@ -19,20 +19,26 @@
   </head>
 
   <body>
+    <!-- navigation bar -->
     <nav class="navbar navbar-dark bg-dark">
+      <!-- redirects to homepage -->
       <a class="navbar-brand" href="/">Note Taker </a>
       <div class="icons">
+        <!-- save note btn -->
         <i class="fas fa-save text-light save-note"></i>
+        <!-- add note btn -->
         <i class="fas fa-plus text-light new-note"></i>
       </div>
     </nav>
     <div class="container-fluid">
+      <!-- container for saved notes -->
       <div class="row">
         <div class="col-4 list-container">
           <div class="card">
             <ul class="list-group"></ul>
           </div>
         </div>
+        <!-- container for active note/new note input -->
         <div class="col-8">
           <input
             class="note-title"
