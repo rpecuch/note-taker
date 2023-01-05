@@ -4,18 +4,18 @@ body {
   margin: 0;
   padding: 0;
 }
-
+/* save note btn */
 .save-note {
   display: none;
 }
-
+/* icons on navbar */
 .icons i {
   margin-left: 15px;
   margin-right: 15px;
   font-size: 1.5rem;
   cursor: pointer;
 }
-
+/* input fields for new note */
 .note-textarea,
 .note-title {
   color: #000000;
@@ -35,10 +35,14 @@ body {
   margin-top: 13px;
   font-size: 3rem;
 }
-
+/* when new note fields are read only */
 .note-title:read-only,
 .note-textarea:read-only {
   color: #757575;
+}
+/* container for saved notes */
+.list-container {
+  padding-left: 0;
 }
 
 .list-container .card {
@@ -48,10 +52,6 @@ body {
   border-bottom-left-radius: 0;
 }
 
-.list-container {
-  padding-left: 0;
-}
-
 .list-container .list-group,
 .list-container .list-group-item:first-child,
 .list-container .card {
@@ -59,12 +59,12 @@ body {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
-
+/* title of saved note */
 .list-item-title {
   display: inline-block;
   width: 75%;
 }
-
+/* trashcan icons for saved notes */
 .list-container i {
   font-size: 1.1rem;
   cursor: pointer;
